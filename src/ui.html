@@ -1,0 +1,74 @@
+<!doctype html>
+<html id="zamek">
+
+<head>
+  <script src="/static/robocore.js"></script>
+  <script src="jquery.mobile.custom.min.js"></script>
+  <link rel="stylesheet" href="jquery.mobile.custom.structure.css" class="css">
+  <link href="ui.css" rel="stylesheet">
+
+  <meta name="viewport" content="initial-scale=1, minimum-scale=1, maximum-scale=1">
+</head>
+<body>
+
+<div class="wrapper">
+
+  <div class="lock disarmed">
+    <div class="shackle">
+      <div class="inner"></div>
+    </div>
+
+    <div class="shackle1">
+      <div class="inner"></div>
+    </div>
+
+    <div class="body">
+      <div class="lft">&nbsp;</div>
+      <div class="rgt">&nbsp;</div>
+      <div class="light">&nbsp;</div>
+    </div>
+  </div>
+
+  <form>
+    <label class="lock_status" for="flip-checkbox-1">disarmed</label>
+    <input type="checkbox" data-role="flipswitch" name="flip-checkbox-1" id="flip-checkbox-1">
+  </form>
+  
+  <div class="controls">
+      <button type-active id="bo">open</button>
+      <button type-active id="bc">close</button>
+      <label id="l1"></label>
+  </div>
+
+  <button class="settings">settings</button>
+
+</div>
+
+<console id="cl1"></console>
+
+<script>
+  $( "#flip-checkbox-1" ).flipswitch();
+
+  function disarmed() {
+    $('.lock_status').html('disarmed');
+    $('.lock').removeClass('armed').addClass('disarmed');
+    $('#bo').trigger('mousedown').delay(50).trigger('mouseup');
+  }
+
+  function armed() {
+    $('.lock_status').html('armed');
+    $('.lock').removeClass('disarmed').addClass('armed');
+    $('#bc').trigger('mousedown').delay(50).trigger('mouseup');
+  }
+
+  $('#flip-checkbox-1').on('change', function() {
+    if($(this).prop('checked')) {
+      armed();
+    } else {
+      disarmed();
+    }
+  })
+</script>
+
+</body>
+</html>

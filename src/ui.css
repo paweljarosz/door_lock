@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'latolight';
+    src: url('https://static.husarion.com/fonts/lato-light-webfont.eot');
+    src: url('https://static.husarion.com/fonts/lato-light-webfont.eot?#iefix') format('embedded-opentype'),
+    url('https://static.husarion.com/fonts/lato-light-webfont.woff2') format('woff2'),
+    url('https://static.husarion.com/fonts/lato-light-webfont.woff') format('woff'),
+    url('https://static.husarion.com/fonts/lato-light-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-height: 360px;
+    min-width: 320px;
+}
+
+body {
+    height: 100% !important;
+    margin: 0;
+    padding: 0;
+    background-size: 100% 100%;
+    background-attachment: fixed !important;
+    font-family: "latolight", helvetica, arial, sans-serif;
+}
+
+button, a, span {
+    font-family: "latolight", helvetica, arial, sans-serif;
+}
+
+.wrapper {
+    width: 300px;
+    height: 100%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.lock {
+    width: 200px;
+    height: auto;
+    padding-left: 50px;
+}
+
+.lock .shackle {
+    width: 50%;
+    margin: 0 auto;
+    height: 100px;
+    border: 15px #D8A852 solid;
+    border-bottom: 0;
+    border-radius: 75px 75px 0 0;
+    transition: 0.5s transform;
+}
+
+
+.lock .body {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    margin-top: -25px;
+}
+
+.lock .body .lft {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background: #E7ECED;
+}
+
+.lock .body .rgt {
+    float: right;
+    width: 50%;
+    height: 100%;
+    background: #C7C7C7;
+}
+
+.light {
+    width: 16%;
+    height: 30%;
+    top: 35%;
+    left: 42%;
+    border-radius: 20px;
+    position: absolute;
+    transition: 0.5s background-color;
+}
+
+
+.lock.disarmed .light {
+    background: #0f0;
+}
+
+.lock.armed .light {
+    background: #f00;
+}
+
+.lock.disarmed .shackle {
+    transform: rotate(45deg) translate(47px, -56px);
+}
+
+form {
+    clear: both;
+    margin-top: 50px;
+    width: 100%;
+}
+
+form label {
+    margin: 0 auto;
+    text-align: center;
+    color: #888;
+}
+
+.ui-flipswitch {
+    border-radius: 20px;
+    background: #D7D7D9;
+    border: 0;
+    width: 70px;
+    margin: 0 auto;
+    display: block;
+}
+
+.ui-flipswitch.ui-flipswitch-active {
+    padding-left: 40px;
+}
+
+.ui-flipswitch .ui-btn.ui-flipswitch-on {
+    border-color: #C8CAC7;
+    border-width: 2px;
+    background: #fff;
+    text-indent: -9999px;
+}
+
+.ui-flipswitch .ui-flipswitch-off {
+    display: none;
+}
+
+.settings {
+    background: url('settings_icon.png') top left no-repeat;
+    width: 34px;
+    height: 34px;
+    text-indent: -9999px;
+    border: 0;
+    outline: 0;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    opacity: 0.5;
+    transition: 0.5s opacity;
+}
+
+.settings:hover {
+    opacity: 1;
+}
+
+
+.show_mobile {
+    display: none;
+}
+
+.hide_mobile {
+    display: block;
+}
+
+#cl1 {
+    display: none;
+}
+
+.controls {
+    /*Ukrywanie przycisków*/
+    display: none !important;
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    visibility: hidden;
+    
+}
+
+
+@media only screen and (max-height: 480px), only screen and (max-width: 767px) {
+}
+
+@media only screen and (max-width: 479px) {
+
+}
